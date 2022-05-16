@@ -23,6 +23,7 @@ static int16_t y_offset       = 0;
 static int16_t h_offset       = 0;
 static int16_t v_offset       = 0;
 static float   precisionSpeed = 1;
+static bool    clicked        = false;
 
 static uint16_t i2c_timeout_timer;
 
@@ -62,9 +63,19 @@ void update_member(int8_t* member, int16_t* offset) {
 
 __attribute__((weak)) void trackball_check_click(bool pressed, report_mouse_t* mouse) {
     if (pressed) {
-        mouse->buttons |= MOUSE_BTN1;
+        //mouse->buttons |= MOUSE_BTN1;
+	if (!clicked) {
+	    register_code(KC_DEL);
+	    clicked = true;
+	}
+        trackball_set_rgbw(0x80, 0x80, 0x80, 0x80);
     } else {
-        mouse->buttons &= ~MOUSE_BTN1;
+        //mouse->buttons &= ~MOUSE_BTN1;
+	if (clicked) {
+            unregister_code(KC_DEL);
+	    clicked = false;
+	}
+        trackball_set_rgbw(0x00, 0x80, 0x00, 0x00);
     }
 }
 
