@@ -32,6 +32,7 @@ const uint16_t PROGMEM win_combo[] = {RSFT_T(KC_DOT), KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
 const uint16_t PROGMEM alt_combo[] = {KC_SCLN, KC_K, COMBO_END};
+const uint16_t PROGMEM ralt_combo[] = {KC_A, KC_D, COMBO_END};
 const uint16_t PROGMEM altwin_combo[] = {KC_SCLN, KC_J, COMBO_END};
 const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_L, KC_SCLN, COMBO_END};
@@ -40,6 +41,7 @@ combo_t key_combos[COMBO_COUNT] = {
 	COMBO(esc_combo, KC_ESC),
 	COMBO(game_combo, TG(_GAMES)),
 	COMBO(alt_combo, KC_LALT),
+	COMBO(ralt_combo, KC_RALT),
 	COMBO(altwin_combo, LGUI(KC_LALT)),
 	COMBO(caps_combo, KC_CAPS),
 	COMBO(backslash_combo, KC_BSLS),
