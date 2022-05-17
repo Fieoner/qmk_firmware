@@ -28,17 +28,21 @@ enum layers
     _GAMES,
 };
 
-const uint16_t PROGMEM win_combo[] = {LT(_NUM,KC_SPC), KC_V, COMBO_END};
+const uint16_t PROGMEM win_combo[] = {RSFT_T(KC_DOT), KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
-const uint16_t PROGMEM alt_combo[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM alt_combo[] = {KC_SCLN, KC_K, COMBO_END};
+const uint16_t PROGMEM altwin_combo[] = {KC_SCLN, KC_J, COMBO_END};
 const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM backslash_combo[] = {KC_L, KC_SCLN, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
 	COMBO(win_combo, KC_LGUI),
 	COMBO(esc_combo, KC_ESC),
 	COMBO(game_combo, TG(_GAMES)),
 	COMBO(alt_combo, KC_LALT),
+	COMBO(altwin_combo, LGUI(KC_LALT)),
 	COMBO(caps_combo, KC_CAPS),
+	COMBO(backslash_combo, KC_BSLS),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
