@@ -31,10 +31,14 @@ enum layers
 const uint16_t PROGMEM win_combo[] = {LT(_NUM,KC_SPC), KC_V, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM alt_combo[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
 	COMBO(win_combo, KC_LGUI),
 	COMBO(esc_combo, KC_ESC),
 	COMBO(game_combo, TG(_GAMES)),
+	COMBO(alt_combo, KC_LALT),
+	COMBO(caps_combo, KC_CAPS),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -55,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYM] = LAYOUT(
         KC_GRV , KC_CIRC,   KC_AT,  KC_DLR, KC_TILD,                                KC_AMPR, KC_EXLM, KC_PIPE, KC_MINS, KC_EQL,
-        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN,  KC_EQL,                                KC_ASTR, KC_RPRN, KC_RCBR, KC_LBRC, KC_RBRC, 
+        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN,  KC_EQL,                                KC_ASTR, KC_RPRN, KC_RCBR, KC_RBRC, KC_QUOT, 
         _______, KC_QUES, KC_PLUS, KC_PERC, XXXXXXX,                                XXXXXXX, XXXXXXX, KC_MINS, KC_QUOT, RSFT_T(KC_BSLS),
                                         XXXXXXX, MO(_CFG), XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX         
     ),
