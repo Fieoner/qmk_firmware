@@ -58,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)         
     ),
     [_ALPHA_COLEMAK] = LAYOUT(
-        KC_Q,         KC_W,    KC_F,    KC_P,    KC_G,                                                   KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT,
-        KC_A,         KC_R,    KC_S,    KC_T,    KC_D,                                                   KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
-        LSFT_T(KC_Z), KC_X,    KC_C,    KC_V,    KC_B,                                                   KC_K,    KC_M,    KC_COMM, KC_DOT,  RSFT_T(KC_SCLN),
-                        LCTL_T(KC_ENT), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)         
+        KC_Q,         KC_W,    KC_F,    KC_P,    KC_B,                                                   KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+        KC_A,         KC_R,    KC_S,    KC_T,    KC_G,                                                   KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
+        LSFT_T(KC_Z), KC_X,    KC_C,    KC_D,    KC_V,                                                   KC_K,    KC_H,    KC_COMM, KC_DOT,  RSFT_T(KC_SLSH),
+                        LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)         
     ),
     [_SYM] = LAYOUT(
         KC_GRV , KC_CIRC,   KC_AT,  KC_DLR, KC_TILD,                                KC_AMPR, KC_EXLM, KC_PIPE, KC_MINS, KC_EQL,
