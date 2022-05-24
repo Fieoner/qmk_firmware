@@ -49,9 +49,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM win_combo[] = {RSFT_T(KC_DOT), KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
-const uint16_t PROGMEM alt_combo[] = {KC_SCLN, KC_K, COMBO_END};
-const uint16_t PROGMEM ralt_combo[] = {KC_A, KC_D, COMBO_END};
-const uint16_t PROGMEM altwin_combo[] = {KC_SCLN, KC_J, COMBO_END};
+const uint16_t PROGMEM alt_combo[] = {KC_L, KC_K, COMBO_END};
+const uint16_t PROGMEM ralt_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM altwin_combo[] = {KC_L, KC_J, COMBO_END};
 const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_L, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM toggle_colemak_combo[] = {KC_B, KC_Y, COMBO_END};
