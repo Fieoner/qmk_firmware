@@ -28,6 +28,24 @@ enum layers
     _GAMES,
 };
 
+enum keycodes
+{
+    KC_TOGGLE_COLEMAK = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_TOGGLE_COLEMAK:
+            if (record->event.pressed) {
+		    layer_invert(_ALPHA_COLEMAK);
+	    }
+	    //else {};
+	    return false;
+        default:
+            return true;
+    }
+}
+
 const uint16_t PROGMEM win_combo[] = {RSFT_T(KC_DOT), KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
@@ -36,6 +54,13 @@ const uint16_t PROGMEM ralt_combo[] = {KC_A, KC_D, COMBO_END};
 const uint16_t PROGMEM altwin_combo[] = {KC_SCLN, KC_J, COMBO_END};
 const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_L, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM toggle_colemak_combo[] = {KC_B, KC_Y, COMBO_END};
+const uint16_t PROGMEM a_combo[] = {KC_A, LT(_NUM,KC_SPC), COMBO_END};
+const uint16_t PROGMEM e_combo[] = {KC_E, LT(_NUM,KC_SPC), COMBO_END};
+const uint16_t PROGMEM i_combo[] = {KC_I, LT(_NUM,KC_SPC), COMBO_END};
+const uint16_t PROGMEM o_combo[] = {KC_O, LT(_NUM,KC_SPC), COMBO_END};
+const uint16_t PROGMEM u_combo[] = {KC_U, LT(_NUM,KC_SPC), COMBO_END};
+const uint16_t PROGMEM n_combo[] = {KC_N, LT(_NUM,KC_SPC), COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
 	COMBO(win_combo, KC_LGUI),
 	COMBO(esc_combo, KC_ESC),
@@ -45,6 +70,13 @@ combo_t key_combos[COMBO_COUNT] = {
 	COMBO(altwin_combo, LGUI(KC_LALT)),
 	COMBO(caps_combo, KC_CAPS),
 	COMBO(backslash_combo, KC_BSLS),
+	COMBO(toggle_colemak_combo, KC_TOGGLE_COLEMAK),
+	COMBO(a_combo, RALT(KC_A)),
+	COMBO(e_combo, RALT(KC_E)),
+	COMBO(i_combo, RALT(KC_I)),
+	COMBO(o_combo, RALT(KC_O)),
+	COMBO(u_combo, RALT(KC_U)),
+	COMBO(n_combo, RALT(KC_N)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -64,8 +96,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)         
     ),
     [_SYM] = LAYOUT(
-        KC_GRV , KC_CIRC,   KC_AT,  KC_DLR, KC_TILD,                                KC_AMPR, KC_EXLM, KC_PIPE, KC_MINS, KC_EQL,
-        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN,  KC_EQL,                                KC_ASTR, KC_RPRN, KC_RCBR, KC_RBRC, KC_QUOT, 
+        KC_GRV , KC_LBRC, KC_RBRC, KC_DLR, KC_TILD,                                KC_AMPR, KC_EXLM, KC_LPRN, KC_RPRN, KC_PIPE,
+        KC_EXLM, KC_AT, KC_HASH, KC_DLR,  KC_PERC,                                KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL,
         _______, KC_QUES, KC_PLUS, KC_PERC, KC_BSPC,                                KC_BSPC, KC_BSPC, KC_UNDS, KC_QUOT, RSFT_T(KC_BSLS),
                                         XXXXXXX, MO(_CFG), XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX         
     ),

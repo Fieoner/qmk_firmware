@@ -65,14 +65,15 @@ __attribute__((weak)) void trackball_check_click(bool pressed, report_mouse_t* m
     if (pressed) {
         //mouse->buttons |= MOUSE_BTN1;
 	if (!clicked) {
-	    register_code(KC_DEL);
+	    //register_code(KC_DEL);
+	    default_layer_set(1);
 	    clicked = true;
 	}
         trackball_set_rgbw(0x80, 0x80, 0x80, 0x80);
     } else {
         //mouse->buttons &= ~MOUSE_BTN1;
 	if (clicked) {
-            unregister_code(KC_DEL);
+            //unregister_code(KC_DEL);
 	    clicked = false;
 	}
         trackball_set_rgbw(0x00, 0x80, 0x00, 0x00);
