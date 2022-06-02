@@ -49,10 +49,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM win_combo[] = {RSFT_T(KC_DOT), KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM game_combo[] = {KC_P, KC_SCLN, RSFT_T(KC_DOT), COMBO_END};
-const uint16_t PROGMEM alt_combo[] = {KC_L, KC_K, COMBO_END};
-const uint16_t PROGMEM ralt_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM alt_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM ralt_combo[] = {KC_L, KC_K, COMBO_END};
 const uint16_t PROGMEM altwin_combo[] = {KC_L, KC_J, COMBO_END};
+const uint16_t PROGMEM altwin2_combo[] = {KC_S, KC_F, COMBO_END};
 const uint16_t PROGMEM caps_combo[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM ctrl_combo[] = {KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM ctrl2_combo[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM enter_combo[] = {KC_F, KC_V, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_L, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM toggle_colemak_combo[] = {KC_B, KC_Y, COMBO_END};
 const uint16_t PROGMEM a_combo[] = {KC_A, LT(_NUM,KC_SPC), COMBO_END};
@@ -68,7 +72,11 @@ combo_t key_combos[COMBO_COUNT] = {
 	COMBO(alt_combo, KC_LALT),
 	COMBO(ralt_combo, KC_RALT),
 	COMBO(altwin_combo, LGUI(KC_LALT)),
+	COMBO(altwin2_combo, LGUI(KC_LALT)),
 	COMBO(caps_combo, KC_CAPS),
+	COMBO(ctrl_combo, KC_LCTL),
+	COMBO(ctrl2_combo, KC_LCTL),
+	COMBO(enter_combo, KC_ENT),
 	COMBO(backslash_combo, KC_BSLS),
 	COMBO(toggle_colemak_combo, KC_TOGGLE_COLEMAK),
 	COMBO(a_combo, RALT(KC_A)),
@@ -104,8 +112,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
         XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                XXXXXXX, KC_PGDN,   KC_UP, KC_PGUP,  KC_DEL,
         KC_MPRV, KC_MPLY, KC_MSTP, KC_MNXT, KC_CAPS,                                KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END,
-        KC_TAB, XXXXXXX, XXXXXXX, LALT_T(OSM(KC_LALT)), XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
-	                                XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, MO(_CFG), XXXXXXX
+        KC_TAB, XXXXXXX, XXXXXXX, LALT_T(OSM(KC_LALT)), KC_LALT,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
+	                                XXXXXXX, XXXXXXX, XXXXXXX,      _______, MO(_CFG), XXXXXXX
     ),
     [_NUM] = LAYOUT(
         KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                                      KC_F6,    KC_F7,  KC_F8,  KC_F9, KC_F10,
