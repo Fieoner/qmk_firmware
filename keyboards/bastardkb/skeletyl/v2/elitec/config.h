@@ -23,11 +23,11 @@
 #define MATRIX_COL_PINS \
     { F5, B6, D7, E6, B4 }
 
-/* Handedness. */
-#define MASTER_RIGHT
-
 /* serial.c configuration (for split keyboard). */
 #define SOFT_SERIAL_PIN D2
 
 /* RGB settings. */
 #define RGB_DI_PIN D3
+
+#define COMBO_COUNT 24
+#define COMBO_ONLY_FROM_LAYER 0
