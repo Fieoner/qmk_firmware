@@ -53,3 +53,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Top right key on right half */
 #define BOOTMAGIC_LITE_ROW_RIGHT    4
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 4
+
+#define COMBO_COUNT 24
+#define COMBO_ONLY_FROM_LAYER 0
