@@ -44,3 +44,16 @@
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_KEYPRESSES
 #endif
+
+#define QUICK_TAP_TERM 0
+
+/* Top left key on left half */
+#define BOOTMAGIC_LITE_ROW    0
+#define BOOTMAGIC_LITE_COLUMN 0
+/* Top right key on right half */
+#define BOOTMAGIC_LITE_ROW_RIGHT    0
+#define BOOTMAGIC_LITE_COLUMN_RIGHT 9
+
+#define PERMISSIVE_HOLD_PER_KEY
+#define TAPPING_TERM_PER_KEY
+#define RETRO_TAPPING_PER_KEY

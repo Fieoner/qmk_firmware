@@ -29,5 +29,5 @@
 /* RGB settings. */
 #define RGB_DI_PIN D3
 
-#define COMBO_COUNT 24
+#define COMBO_COUNT 25
 #define COMBO_ONLY_FROM_LAYER 0

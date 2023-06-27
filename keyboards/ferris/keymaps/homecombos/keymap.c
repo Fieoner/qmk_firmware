@@ -5,6 +5,7 @@
 
 enum combos {
   capsword,
+  tmux_key,
   esc,
   ent,
   bksp,
@@ -31,6 +32,7 @@ enum combos {
 };
 
 const uint16_t PROGMEM capsword_combo[] = {LT(3, KC_TAB), KC_T, COMBO_END};
+const uint16_t PROGMEM tmux_key_combo[] = {LT(3, KC_TAB), KC_A, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM ent_combo[] = {KC_F, KC_V, COMBO_END};
 const uint16_t PROGMEM bksp_combo[] = {KC_A, MT(MOD_LSFT, KC_SLSH), COMBO_END};
@@ -57,6 +59,7 @@ const uint16_t PROGMEM home_rctl_combo[] = {LT(2, KC_BSPC), KC_L, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [capsword] = COMBO(capsword_combo, KC_TRNS),
+  [tmux_key] = COMBO(tmux_key_combo, LCTL(KC_W)),
   [esc] = COMBO(esc_combo, KC_ESC),
   [ent] = COMBO(ent_combo, KC_ENT),
   [bksp] = COMBO(bksp_combo, KC_BSPC),
@@ -94,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_split_3x5_2(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
-    KC_F11, KC_F12, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINS, KC_GRV, KC_LBRC, KC_RBRC, KC_DEL,
+    KC_F11, KC_F12, KC_F13, KC_F14, KC_F15, KC_MINS, KC_GRV, KC_LBRC, KC_RBRC, KC_DEL,
     MO(1), KC_TRNS, KC_TRNS, KC_TRNS
   ),
   // symbols
